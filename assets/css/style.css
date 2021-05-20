@@ -24,6 +24,10 @@ main {
     float: right;
 }
 
+li {
+    list-style: none;
+}
+
 .fiveDayForecast {
     border: 2px solid var(--darkBlue);
     background-color: var(--darkBlue);

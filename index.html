@@ -17,19 +17,20 @@
     <aside>
         <h1>Search for a City:</h1>
         <form>
-            <input>
-            <button>Search</button>
+            <input id="query">
+            <button id="searchBtn">Search</button>
         </form>
         <hr>
+        <div id="searchHistory"></div>
     </aside>
     <main>
         <section>
             <h1>City Date weatherIcon</h1>
             <ul>
-                <li>Temp:</li>
-                <li>Wind:</li>
-                <li>Humidity:</li>
-                <li>UV Index:</li>
+                <li id="temp"></li>
+                <li id="wind"></li>
+                <li id="humidity"></li>
+                <li id="uvIndex"></li>
             </ul>
         </section>
         <section>
@@ -41,6 +42,8 @@
             <div class="fiveDayForecast">five</div>
         </section>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
