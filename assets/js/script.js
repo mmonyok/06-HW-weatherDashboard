@@ -1,4 +1,6 @@
 // add something for if they hit search with nothing in it.
+// make buttons stay on page after refresh
+// make buttons append to beginning instead of end.
 
 let inputValue = $('#query');
 let searchBtnEl = $('#searchBtn');
@@ -10,7 +12,7 @@ let apiKey = "&appid=c5c4d5e93d080070caa63a5458f238e2";
 let requestURL;
 let historyBtn = $('button');
 
-
+// This function will use a city query with the weather API to get the data.
 function getLatLon(event) {
     event.preventDefault();
     let query = inputValue.val();
@@ -20,14 +22,16 @@ function getLatLon(event) {
             return response.json();
         })
         .then(function (data) {
+            // This variable holds the latitude and longitude data, so it can be passed onto the additional weather search functions.
             let lineData = data.coord;
             console.log(lineData);
             weatherData(lineData);
         })
-        createStorageBtn(query);
+    createStorageBtn(query);
     return;
 }
 
+// This is similar to the one above except that it is taking in the query from specific buttons that are selected, and it isn't running the create button function.
 function savedCity(buttonHistory) {
     requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + buttonHistory + "&units=imperial" + apiKey;
     fetch(requestURL)
@@ -42,12 +46,14 @@ function savedCity(buttonHistory) {
     return;
 }
 
+// This function will dynamically create buttons in the search history section that when clicked will search the indicated city again.
 function createStorageBtn(query) {
     let searchHistoryEl = $('#searchHistory');
     let historyLiEl = $('<li>');
+    // This will create a new button with the search query value as its name.
     savedSearchBtn = $('<button>');
+    savedSearchBtn.addClass("historyBtn");
     savedSearchBtn.text(query);
-    savedSearchBtn.attr('data-searchValue', query);
     savedSearchBtn.attr('id', query);
     historyLiEl.append(savedSearchBtn);
     searchHistoryEl.append(historyLiEl);
@@ -56,16 +62,18 @@ function createStorageBtn(query) {
         queryData: query,
     };
     localStorage.setItem(query, JSON.stringify(savedQuery));
-
-    savedSearchBtn.click(function(event) {
-        event.preventDefault();
-        let buttonData = JSON.parse(localStorage.getItem($(this).attr('id')));
-        let buttonHistory = buttonData.queryData;
-        console.log(buttonHistory);
-        savedCity(buttonHistory);
-    })
 }
 
+    // This will make each newly created button clickable and send the city name to the function that will pull the latitude and longitude data from it.
+$("#searchHistory").on("click", ".historyBtn", function(event) {
+    event.preventDefault();
+    let buttonData = JSON.parse(localStorage.getItem($(this).attr('id')));
+    let buttonHistory = buttonData.queryData;
+    console.log(buttonHistory);
+    savedCity(buttonHistory);
+});
+
+// This function pulls
 function weatherData(coordinates) {
     let lon = coordinates.lon;
     let lat = coordinates.lat
