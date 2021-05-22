@@ -1,3 +1,5 @@
+// add something for if they hit search with nothing in it.
+
 let inputValue = $('#query');
 let searchBtnEl = $('#searchBtn');
 let tempEl = $('#temp');
@@ -6,6 +8,8 @@ let humidityEl = $('#humidity');
 let uvIndexEl = $('#uvIndex');
 let apiKey = "&appid=c5c4d5e93d080070caa63a5458f238e2";
 let requestURL;
+let historyBtn = $('button');
+
 
 function getLatLon(event) {
     event.preventDefault();
@@ -20,13 +24,51 @@ function getLatLon(event) {
             console.log(lineData);
             weatherData(lineData);
         })
+        createStorageBtn(query);
     return;
+}
+
+function savedCity(buttonHistory) {
+    requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + buttonHistory + "&units=imperial" + apiKey;
+    fetch(requestURL)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            let lineData = data.coord;
+            console.log(lineData);
+            weatherData(lineData);
+        })
+    return;
+}
+
+function createStorageBtn(query) {
+    let searchHistoryEl = $('#searchHistory');
+    let historyLiEl = $('<li>');
+    savedSearchBtn = $('<button>');
+    savedSearchBtn.text(query);
+    savedSearchBtn.attr('data-searchValue', query);
+    savedSearchBtn.attr('id', query);
+    historyLiEl.append(savedSearchBtn);
+    searchHistoryEl.append(historyLiEl);
+    // Saves the query to local storage
+    let savedQuery = {
+        queryData: query,
+    };
+    localStorage.setItem(query, JSON.stringify(savedQuery));
+
+    savedSearchBtn.click(function(event) {
+        event.preventDefault();
+        let buttonData = JSON.parse(localStorage.getItem($(this).attr('id')));
+        let buttonHistory = buttonData.queryData;
+        console.log(buttonHistory);
+        savedCity(buttonHistory);
+    })
 }
 
 function weatherData(coordinates) {
     let lon = coordinates.lon;
     let lat = coordinates.lat
-    console.log(lon + " " + lat);
     requestURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial" + apiKey;
 
     fetch(requestURL)
@@ -57,7 +99,6 @@ function weatherData(coordinates) {
     }
 
     function genFiveDay(data) {
-        console.log(data.daily[0].weather[0].icon);
         let fiveDayEl = $('.fiveDayForecast');
         fiveDayEl.empty();
         let dayEl = [
