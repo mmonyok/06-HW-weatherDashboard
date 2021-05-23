@@ -37,7 +37,11 @@ li {
     border: 2px solid var(--darkBlue);
     background-color: var(--darkBlue);
     color: var(--grayBlue);
-    width: 100px;
+    width: 125px;
     height: 125px;
     margin: 25px;
+}
+
+#uvIndex {
+    border-radius: 10px;
 }

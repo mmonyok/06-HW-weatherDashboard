@@ -22,10 +22,9 @@ function getLatLon(event) {
             return response.json();
         })
         .then(function (data) {
+            console.log(data);
             // This variable holds the latitude and longitude data, so it can be passed onto the additional weather search functions.
-            let lineData = data.coord;
-            console.log(lineData);
-            weatherData(lineData);
+            weatherData(data);
         })
     createStorageBtn(query);
     return;
@@ -39,9 +38,7 @@ function savedCity(buttonHistory) {
             return response.json();
         })
         .then(function (data) {
-            let lineData = data.coord;
-            console.log(lineData);
-            weatherData(lineData);
+            weatherData(data);
         })
     return;
 }
@@ -64,8 +61,8 @@ function createStorageBtn(query) {
     localStorage.setItem(query, JSON.stringify(savedQuery));
 }
 
-    // This will make each newly created button clickable and send the city name to the function that will pull the latitude and longitude data from it.
-$("#searchHistory").on("click", ".historyBtn", function(event) {
+// This will make each newly created button clickable and send the city name to the function that will pull the latitude and longitude data from it.
+$("#searchHistory").on("click", ".historyBtn", function (event) {
     event.preventDefault();
     let buttonData = JSON.parse(localStorage.getItem($(this).attr('id')));
     let buttonHistory = buttonData.queryData;
@@ -74,9 +71,15 @@ $("#searchHistory").on("click", ".historyBtn", function(event) {
 });
 
 // This function pulls
-function weatherData(coordinates) {
-    let lon = coordinates.lon;
-    let lat = coordinates.lat
+function weatherData(data) {
+    console.log("weatherData");
+    console.log(data);
+    let lineData = data.coord;
+    let cityName = data.name;
+    // Gets us the longitute and latitude data.
+    let lon = lineData.lon;
+    let lat = lineData.lat
+    // Our API call.
     requestURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial" + apiKey;
 
     fetch(requestURL)
@@ -91,18 +94,63 @@ function weatherData(coordinates) {
         })
 
     function genDaily(data) {
-        let temp = "Temp: " + data.current.temp + " \u00B0F";
-        let wind = "Wind: " + data.current.wind_speed + " MPH";
-        let humidity = "Humidity: " + data.current.humidity + " %";
-        let uvIndex = "UV Index: " + data.current.uvi;
-        tempEl.empty();
-        windEl.empty();
-        humidityEl.empty();
-        uvIndexEl.empty();
-        tempEl.append(temp);
-        windEl.append(wind);
-        humidityEl.append(humidity);
-        uvIndexEl.append(uvIndex);
+        console.log("genDaily Data");
+        console.log(data);
+        // Converts the date time stamp to a readable output.
+        let unixTime = data.current.dt;
+        let dateConversion = new Date(unixTime * 1000);
+        let date = dateConversion.toLocaleDateString("en-Us");
+        let weatherHeadEl = $('#weatherHead')
+        let dailyEl = $('#dailyWeather');
+        weatherHeadEl.empty();
+        dailyEl.empty();
+        let dailyHeading = [
+            cityName,
+            "(" + date + ")",
+            "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png",
+        ]
+        let dailyWeather = [
+            "Temp: " + data.current.temp + " \u00B0F",
+            "Wind: " + data.current.wind_speed + " MPH",
+            "Humidity: " + data.current.humidity + " %",
+            data.current.uvi,
+        ]
+        console.log("UV Index");
+        console.log(data.current.uvi);
+        for (let q = 0; q < dailyHeading.length; q++) {
+            if (q === 2) {
+                let img = $('<img>');
+                img.attr("src", dailyHeading[q]);
+                img.attr("class", "icon");
+                weatherHeadEl.append(img);
+            } else {
+                weatherHeadEl.append(dailyHeading[q]);
+            }
+        }
+
+        for (let y = 0; y < dailyWeather.length; y++) {
+            if (y === 3) {
+                console.log(dailyWeather[y]);
+                let spanEl = $('<span>');
+                spanEl.attr("id", "uvIndex");
+                if (dailyWeather[y] < 3) {
+                    spanEl.css({"background-color": "green", "color": "black"});
+                } else if (dailyWeather[y] >= 3 && dailyWeather[y] < 8) {
+                    spanEl.css({"background-color": "yellow", "color": "black"});
+                } else {
+                    spanEl.css({"background-color": "orangered", "color": "black"});
+                }
+                spanEl.text(dailyWeather[y]);
+                let liEl = $('<li>');
+                liEl.text("UV Index: ");
+                liEl.append(spanEl);
+                dailyEl.append(liEl);
+            } else {
+                let liEl = $('<li>');
+                liEl.text(dailyWeather[y])
+                dailyEl.append(liEl);
+            }
+        }
         return;
     }
 
@@ -116,14 +164,19 @@ function weatherData(coordinates) {
             $('#day4'),
             $('#day5'),
         ]
+        // The inner loop appends the current weather data point to the div and then the outer loop changes which day is being added.
         for (let z = 0; z < 5; z++) {
             for (let i = 0; i < 5; i++) {
+                // Converts the date time stamp to a readable output for each day of the forecast.
+                unixTime = data.daily[z].dt;
+                dateConversion = new Date(unixTime * 1000);
+                date = dateConversion.toLocaleDateString("en-Us");
                 let weatherInfo = [
-                    "Date",
+                    date,
                     "http://openweathermap.org/img/wn/" + data.daily[z].weather[0].icon + "@2x.png",
-                    data.daily[z].temp.day + " \u00B0F",
-                    data.daily[z].wind_speed + " MPH",
-                    data.daily[z].humidity + " %",
+                    "Temp: " + data.daily[z].temp.day + " \u00B0F",
+                    "Wind: " + data.daily[z].wind_speed + " MPH",
+                    "Humidity: " + data.daily[z].humidity + " %",
                 ];
                 if (i === 1) {
                     let liEl = $('<li>');
