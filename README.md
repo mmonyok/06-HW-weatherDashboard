@@ -66,9 +66,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Badges
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
 ![Language Count](https://img.shields.io/github/languages/count/mmonyok/06-HW-weatherDashboard?color=blueviolet&label=Repo%20Language%20Count&logo=GitHub&logoColor=blueviolet&style=plastic)
 
 ![Top Language](https://img.shields.io/github/languages/top/mmonyok/06-HW-weatherDashboard?color=blue&logo=GitHub&logoColor=blue&style=plastic)
