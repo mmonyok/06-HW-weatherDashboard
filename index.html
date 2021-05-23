@@ -10,33 +10,37 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="flexColumn">
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <aside>
-        <h1>Search for a City:</h1>
-        <form>
-            <input id="query" type="text" placeholder="Enter a City">
-            <button id="searchBtn">Search</button>
-        </form>
-        <hr>
-        <div id="searchHistory"></div>
-    </aside>
-    <main>
-        <section >
-            <h1 id="weatherHead"></h1>
-            <div id="dailyWeather"></div>            
-        </section>
-        <section>
-            <h2>5-Day Forecast:</h2>
-            <div class="fiveDayForecast" id="day1"></div>
-            <div class="fiveDayForecast" id="day2"></div>
-            <div class="fiveDayForecast" id="day3"></div>
-            <div class="fiveDayForecast" id="day4"></div>
-            <div class="fiveDayForecast" id="day5"></div>
-        </section>
-    </main>
+    <div class="flexRow" id="mainDiv">
+        <aside class="flexColumn">
+            <h1>Search for a City:</h1>
+            <form class="flexColumn">
+                <input id="query" type="text" placeholder="Enter a City">
+                <button id="searchBtn">Search</button>
+            </form>
+            <hr>
+            <div class="flexColumn" id="searchHistory"></div>
+        </aside>
+        <main class="flexColumn">
+            <section class="flexColumn">
+                <h1 id="weatherHead"></h1>
+                <div id="dailyWeather"></div>            
+            </section>
+            <section class="flexColumn" id="fiveDay">
+                <div><h2>5-Day Forecast:</h2></div>
+                <div class="flexRow">
+                    <div class="fiveDayForecast" id="day1"></div>
+                    <div class="fiveDayForecast" id="day2"></div>
+                    <div class="fiveDayForecast" id="day3"></div>
+                    <div class="fiveDayForecast" id="day4"></div>
+                    <div class="fiveDayForecast" id="day5"></div>
+                </div>
+            </section>
+        </main>
+    </div>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

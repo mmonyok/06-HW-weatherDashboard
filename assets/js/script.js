@@ -106,7 +106,7 @@ function weatherData(data) {
         dailyEl.empty();
         let dailyHeading = [
             cityName,
-            "(" + date + ")",
+            " (" + date + ")",
             "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png",
         ]
         let dailyWeather = [
@@ -134,7 +134,7 @@ function weatherData(data) {
                 let spanEl = $('<span>');
                 spanEl.attr("id", "uvIndex");
                 if (dailyWeather[y] < 3) {
-                    spanEl.css({"background-color": "green", "color": "black"});
+                    spanEl.css({"background-color": "green", "color": "white"});
                 } else if (dailyWeather[y] >= 3 && dailyWeather[y] < 8) {
                     spanEl.css({"background-color": "yellow", "color": "black"});
                 } else {
