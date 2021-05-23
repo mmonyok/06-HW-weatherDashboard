@@ -4,7 +4,7 @@
 [Link to live site.](https://mmonyok.github.io/06-HW-weatherDashboard/)
 
 ## Description
-- Understanding server-side APIs is an important part of my coding journey. Working with them on this project will go a long way in assisting me in my coding journey. 
+- Understanding server-side APIs is an important part of my coding journey. Working with them on this project will go a long way in assisting me in developing my coding skills and knowledge. 
 - The changing weather and its patterns are an integral part of daily life for everyone. Knowing the current and future weather will help anyone make or change plans, depending on how the weather affects them. This webpage allows for one to check the current weather, as well as the weather for the next 5 days.
 - This project helped me better solidy my JavaScript knowledge, especially as switched to working predominantly in jQuery. I also learned a lot more about navigating server-side APIs, changing their parameters, and finding how to best manipulate them for my needs.
 
@@ -32,14 +32,9 @@
 6. Edit in your code editor and continue to commit, push changes and perform other Git actions using your repository https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html.
 
 ## Usage
-Provide instructions and examples for use. Include screenshots as needed.
-
 ![Screenshot of finished project.](./images/screenshot.png)
 
 ## Credits
-List your collaborators, if any, with links to their GitHub profiles.
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
 - Tutorials Followed:
 [JavaScript Weather App Tutorial using Openweathermap API for beginners | Javascript tutorial](https://youtu.be/GXrDEA3SIOQ)
 [Professional README guide template provided by Coding Boot Camp.](https://github.com/coding-boot-camp)
