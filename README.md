@@ -4,42 +4,71 @@
 [Link to live site.](https://mmonyok.github.io/06-HW-weatherDashboard/)
 
 ## Description
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+- Understanding server-side APIs is an important part of my coding journey. Working with them on this project will go a long way in assisting me in my coding journey. 
+- The changing weather and its patterns are an integral part of daily life for everyone. Knowing the current and future weather will help anyone make or change plans, depending on how the weather affects them. This webpage allows for one to check the current weather, as well as the weather for the next 5 days.
+- This project helped me better solidy my JavaScript knowledge, especially as switched to working predominantly in jQuery. I also learned a lot more about navigating server-side APIs, changing their parameters, and finding how to best manipulate them for my needs.
 
-## Table of Contents (Optional)
-If your README is long, add a table of contents to make it easy for users to find what they need.
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+## Table of Contents
+- [06-HW-weatherDashboard](#06-hw-weatherdashboard)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Credits](#credits)
+  - [License](#license)
+  - [Badges](#badges)
 
 ## Installation
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+1. Provided that you have a code editor of your choosing installed on your system, such as VS Code (https://code.visualstudio.com/),
+
+2. Provided that you have a Terminal installed for Windows (https://www.microsoft.com/en-us/p/windows-terminal/9n0dx20hk701?rtc=1&activetab=pivot:overviewtab) or are using a Mac with Terminal installed with the OS,
+
+3. You have Git and Github Desktop installed (https://git-scm.com/downloads, https://desktop.github.com/) and have registered for an account,
+
+4. Clone this repository: git clone https://github.com/bpplaysguitar/weather-dashboard.git,
+
+5. Create your own repository for the files on GitHub.
+
+6. Edit in your code editor and continue to commit, push changes and perform other Git actions using your repository https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html.
 
 ## Usage
 Provide instructions and examples for use. Include screenshots as needed.
 
-![Screenshot of finished project.](relativeLink)
+![Screenshot of finished project.](./images/screenshot.png)
 
 ## Credits
 List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
 - Tutorials Followed:
+[JavaScript Weather App Tutorial using Openweathermap API for beginners | Javascript tutorial](https://youtu.be/GXrDEA3SIOQ)
 [Professional README guide template provided by Coding Boot Camp.](https://github.com/coding-boot-camp)
 
 - Additional Assets:
-[Color palette taken from colorhunt.co; it is color palette #264587.](https://colorhunt.co/palette/282007)
+[Color palette taken from colorhunt.co; it is color palette #273466.](https://colorhunt.co/palette/282007)
 
 ## License
-The last section of a high-quality README file is the license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, refer to [https://choosealicense.com/](https://choosealicense.com/).
----
-🏆 The previous sections are the bare minimum, and your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
+- MIT License
 
+- Copyright (c) [2021] [Melody Monyok]
+
+- Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+- The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 
 ## Badges
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
@@ -51,11 +80,8 @@ Badges aren't necessary, per se, but they demonstrate street cred. Badges let ot
 
 ![GitHub Followers](https://img.shields.io/github/followers/mmonyok?color=success&logo=GitHub&logoColor=success&style=plastic)
 
-## Features
-If your project has a lot of features, list them here.
+![License](https://img.shields.io/github/license/mmonyok/06-HW-weatherDashboard?color=yellow&logo=github&logoColor=yellow&style=plastic)
 
-## How to Contribute
-If you created an application or package and would like other developers to contribute it, you can include guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own if you'd prefer.
+![Repo Size](https://img.shields.io/github/repo-size/mmonyok/06-HW-weatherDashboard?color=important&logo=github&logoColor=important&style=plastic)
 
-## Tests
-Go the extra mile and write tests for your application. Then provide examples on how to run them here.
+![Code Lines](https://img.shields.io/tokei/lines/github/mmonyok/06-HW-weatherDashboard?color=FF0000&label=code%20lines&logo=github&logoColor=FF0000&style=plastic)
