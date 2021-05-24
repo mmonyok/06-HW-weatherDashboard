@@ -12,21 +12,37 @@ let apiKey = "&appid=c5c4d5e93d080070caa63a5458f238e2";
 let requestURL;
 let historyBtn = $('button');
 
+$(document).ready(function() {
+    alert("If you search with state, you must also search with country code, separated by commas.");
+}) 
+
 // This function will use a city query with the weather API to get the data.
 function getLatLon(event) {
     event.preventDefault();
-    let query = inputValue.val();
+    // alert("If you search with state, you must also search with country code, separated by commas.");
+    if (!$('#query').val()) {
+        alert("You must enter a city name.");
+        return;
+    }
+        let query = inputValue.val();
     requestURL = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&units=imperial" + apiKey;
     fetch(requestURL)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
+            console.log("cityQuery")
             console.log(data);
+            if (data.cod == 404) {
+                alert("Your city is not found for some reason; please try again.")
+                return;
+            }
             // This variable holds the latitude and longitude data, so it can be passed onto the additional weather search functions.
             weatherData(data);
+            createStorageBtn(query);
         })
-    createStorageBtn(query);
+    // Clears the input field, so you don't have to manually delete the input.
+    $('#query').val("");
     return;
 }
 
@@ -76,6 +92,8 @@ function weatherData(data) {
     console.log(data);
     let lineData = data.coord;
     let cityName = data.name;
+    let countryCode = data.sys.country;
+    console.log("country code " + countryCode);
     // Gets us the longitute and latitude data.
     let lon = lineData.lon;
     let lat = lineData.lat
@@ -99,7 +117,7 @@ function weatherData(data) {
         // Converts the date time stamp to a readable output.
         let unixTime = data.current.dt;
         let dateConversion = new Date(unixTime * 1000);
-        let date = dateConversion.toLocaleDateString("en-Us");
+        let date = dateConversion.toLocaleDateString("en-" + countryCode);
         let weatherHeadEl = $('#weatherHead')
         let dailyEl = $('#dailyWeather');
         weatherHeadEl.empty();
@@ -107,7 +125,7 @@ function weatherData(data) {
         let dailyHeading = [
             cityName,
             " (" + date + ")",
-            "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + "@2x.png",
+            "http://openweathermap.org/img/wn/" + data.current.weather[0].icon + ".png",
         ]
         let dailyWeather = [
             "Temp: " + data.current.temp + " \u00B0F",
@@ -134,11 +152,11 @@ function weatherData(data) {
                 let spanEl = $('<span>');
                 spanEl.attr("id", "uvIndex");
                 if (dailyWeather[y] < 3) {
-                    spanEl.css({"background-color": "green", "color": "white"});
+                    spanEl.css({ "background-color": "green", "color": "white" });
                 } else if (dailyWeather[y] >= 3 && dailyWeather[y] < 8) {
-                    spanEl.css({"background-color": "yellow", "color": "black"});
+                    spanEl.css({ "background-color": "yellow", "color": "black" });
                 } else {
-                    spanEl.css({"background-color": "orangered", "color": "black"});
+                    spanEl.css({ "background-color": "orangered", "color": "black" });
                 }
                 spanEl.text(dailyWeather[y]);
                 let liEl = $('<li>');
@@ -168,12 +186,12 @@ function weatherData(data) {
         for (let z = 0; z < 5; z++) {
             for (let i = 0; i < 5; i++) {
                 // Converts the date time stamp to a readable output for each day of the forecast.
-                unixTime = data.daily[z].dt;
+                unixTime = data.daily[z + 1].dt;
                 dateConversion = new Date(unixTime * 1000);
                 date = dateConversion.toLocaleDateString("en-Us");
                 let weatherInfo = [
                     date,
-                    "http://openweathermap.org/img/wn/" + data.daily[z].weather[0].icon + "@2x.png",
+                    "http://openweathermap.org/img/wn/" + data.daily[z].weather[0].icon + ".png",
                     "Temp: " + data.daily[z].temp.day + " \u00B0F",
                     "Wind: " + data.daily[z].wind_speed + " MPH",
                     "Humidity: " + data.daily[z].humidity + " %",
@@ -182,12 +200,13 @@ function weatherData(data) {
                     let liEl = $('<li>');
                     let img = $('<img>');
                     img.attr("src", weatherInfo[i]);
-                    img.attr("class", "icon");
+                    img.attr("class", "fiverListItem");
                     liEl.append(img);
                     dayEl[z].append(liEl);
                 } else {
                     let liEl = $('<li>');
                     liEl.text(weatherInfo[i]);
+                    liEl.attr("class", "fiverListItem");
                     dayEl[z].append(liEl);
                 }
             }

@@ -6,21 +6,22 @@
 }
 
 body {
-    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--grayBlue);
 }
 
-header {
-    width: 100%;
-    text-align: center;
-    /* Sets the color gradient */
-    background-image: linear-gradient(to right, var(--lightBlue), var(--deepBlue));
-}
 
 aside {
     flex: 2;
     flex-direction: column;
     float: left;
     height: 100%;
+    border: 2px solid var(--darkBlue);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    color: var(--darkBlue);
 }
 
 aside h1 {
@@ -35,6 +36,22 @@ form {
     margin: 2px 10px;
 }
 
+h1 {
+    margin: 0px;
+}
+
+header {
+    width: 100%;
+    text-align: center;
+    /* Sets the color gradient */
+    background-image: linear-gradient(to right, var(--lightBlue), var(--deepBlue));
+    color: var(--darkBlue);
+}
+
+header h1 {
+    line-height: 75px;
+}
+
 hr {
     margin: 5px 10px;
     height: 1px;
@@ -43,6 +60,7 @@ hr {
 
 li {
     list-style: none;
+    margin-top: 2px;
 }
 
 main {
@@ -50,6 +68,21 @@ main {
     flex-direction: column;
     float: right;
     height: 100%;
+}
+
+.fiveDayForecast {
+    border: 2px solid var(--darkBlue);
+    background-color: var(--darkBlue);
+    background-image: linear-gradient(to right, var(--deepBlue), var(--darkBlue));
+    border-radius: 10px;
+    color: var(--grayBlue);
+    width: 125px;
+    height: 150px;
+    margin: 25px;
+}
+
+.fiverListItem {
+    margin: 2px 0px 0px 3px;
 }
 
 .flexRow {
@@ -62,25 +95,40 @@ main {
     flex-direction: column;
 }
 
-.icon {
-    height: 40px;
-    width: 50px;
-}
-
-.fiveDayForecast {
-    border: 2px solid var(--darkBlue);
-    background-color: var(--darkBlue);
-    color: var(--grayBlue);
-    width: 125px;
-    height: 125px;
-    margin: 25px;
-}
-
 .historyBtn {
     width: 100%;
     background-color: darkgray;
     text-transform: capitalize;
     margin-top: 3px;
+}
+
+#dailySection {
+    margin-left: 25px;
+    border: 2px solid var(--darkBlue);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    color: var(--darkBlue);
+}
+
+#dailyWeather {
+    margin-left: 10px;
+}
+
+#day1 {
+    margin: 25px 25px 25px 10px;
+}
+
+#fiveDay {
+    border: 2px solid var(--darkBlue);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+}
+
+#fiveDay h2 {
+    color: var(--darkBlue);
+    margin: 0px 0px 0px 10px;
 }
 
 #mainDiv {
@@ -105,4 +153,15 @@ main {
 #uvIndex {
     border-radius: 10px;
     padding: 2px 5px;
+}
+
+#weatherHead {
+    display: flex;
+    align-items: center;
+    border: 2px solid var(--darkBlue);
+    border-radius: 10px;
+    color: var(--grayBlue);
+    padding: 10px;
+    margin: 10px;
+    background-image: linear-gradient(to right, var(--deepBlue), var(--darkBlue));
 }
