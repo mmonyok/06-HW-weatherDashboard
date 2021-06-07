@@ -32,7 +32,12 @@
 6. Edit in your code editor and continue to commit, push changes and perform other Git actions using your repository https://docs.gitlab.com/ee/gitlab-basics/start-using-git.html.
 
 ## Usage
-![Screenshot of finished project.](./images/screenshot.png)
+- Enter a city name in the search box. If you search with state, you must also search with country code, separated by commas.
+- The current forecast, as well as the forecast for the next 5 days will be displayed.
+- Recent city searches will be displayed below the search box; click on any of them to search that city again.
+![Screenshot of web application on page load.](./images/screenshot.png)
+![Screenshot of web application during use.](images/screenshot2.png)
+![GIF of web application in use.](images/weatherDashboardGIF.gif)
 
 ## Credits
 - Tutorials Followed:
