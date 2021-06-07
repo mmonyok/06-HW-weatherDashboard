@@ -17,6 +17,7 @@
   - [Credits](#credits)
   - [License](#license)
   - [Badges](#badges)
+  - [Contact](#contact)
 
 ## Installation
 1. Provided that you have a code editor of your choosing installed on your system, such as VS Code (https://code.visualstudio.com/),
@@ -40,6 +41,13 @@
 ![GIF of web application in use.](images/weatherDashboardGIF.gif)
 
 ## Credits
+- Technologies Used:
+  - [jQuery](https://jquery.com/)
+  - [Open Weather Map API](https://openweathermap.org/api)
+    - [Current Weather Data](https://openweathermap.org/current)
+    - [One Call API](https://openweathermap.org/api/one-call-api)
+  - [ScreenToGIF](https://www.screentogif.com/)
+
 - Tutorials Followed:
 [JavaScript Weather App Tutorial using Openweathermap API for beginners | Javascript tutorial](https://youtu.be/GXrDEA3SIOQ)
 [Professional README guide template provided by Coding Boot Camp.](https://github.com/coding-boot-camp)
@@ -82,3 +90,8 @@ SOFTWARE.
 ![Repo Size](https://img.shields.io/github/repo-size/mmonyok/06-HW-weatherDashboard?color=important&logo=github&logoColor=important&style=plastic)
 
 ![Code Lines](https://img.shields.io/tokei/lines/github/mmonyok/06-HW-weatherDashboard?color=FF0000&label=code%20lines&logo=github&logoColor=FF0000&style=plastic)
+
+## Contact
+- Melody Monyok
+  - <monyokwebdev@gmail.com>
+  - (612) 492-1528
