@@ -37,8 +37,8 @@
 - The current forecast, as well as the forecast for the next 5 days will be displayed.
 - Recent city searches will be displayed below the search box; click on any of them to search that city again.
 ![Screenshot of web application on page load.](./images/screenshot.png)
-![Screenshot of web application during use.](images/screenshot2.png)
-![GIF of web application in use.](images/weatherDashboardGIF.gif)
+![Screenshot of web application during use.](./images/screenshot2.png)
+![GIF of web application in use.](./images/weatherDashboardGIF.gif)
 
 ## Credits
 - Technologies Used:
@@ -79,19 +79,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Badges
-![Language Count](https://img.shields.io/github/languages/count/mmonyok/06-HW-weatherDashboard?color=blueviolet&label=Repo%20Language%20Count&logo=GitHub&logoColor=blueviolet&style=plastic)
+![Language Count](https://img.shields.io/github/languages/count/mmonyok/06-HW-weatherDashboard?color=9400D3&label=Language%20Count&logo=github&logoColor=9400D3&style=plastic)
 
-![Top Language](https://img.shields.io/github/languages/top/mmonyok/06-HW-weatherDashboard?color=blue&logo=GitHub&logoColor=blue&style=plastic)
+![Top Language](https://img.shields.io/github/languages/top/mmonyok/06-HW-weatherDashboard?color=4B0082&logo=github&logoColor=4B0082&style=plastic)
 
-![GitHub Followers](https://img.shields.io/github/followers/mmonyok?color=success&logo=GitHub&logoColor=success&style=plastic)
+![GitHub Followers](https://img.shields.io/github/followers/mmonyok?color=0000FF&label=Followers&logo=github&logoColor=0000FF&style=plastic)
 
-![License](https://img.shields.io/github/license/mmonyok/06-HW-weatherDashboard?color=yellow&logo=github&logoColor=yellow&style=plastic)
+![Forks](https://img.shields.io/github/forks/mmonyok/06-HW-weatherDashboard?color=00FF00&label=Forks&logo=GitHub&logoColor=00FF00&style=plastic)
 
-![Repo Size](https://img.shields.io/github/repo-size/mmonyok/06-HW-weatherDashboard?color=important&logo=github&logoColor=important&style=plastic)
+![License](https://img.shields.io/github/license/mmonyok/06-HW-weatherDashboard?color=FFFF00&label=License&logo=github&logoColor=FFFF00&style=plastic)
 
-![Code Lines](https://img.shields.io/tokei/lines/github/mmonyok/06-HW-weatherDashboard?color=FF0000&label=code%20lines&logo=github&logoColor=FF0000&style=plastic)
+![Repo Size](https://img.shields.io/github/repo-size/mmonyok/06-HW-weatherDashboard?color=FF7F00&label=Repo%20Size&logo=github&logoColor=FF7F00&style=plastic)
+
+![Code Lines](https://img.shields.io/tokei/lines/github/mmonyok/06-HW-weatherDashboard?color=FF0000&label=Code%20Lines&logo=github&logoColor=FF0000&style=plastic)
+
+![Follow on Twitter](https://img.shields.io/twitter/follow/sheisthemelody?style=social)
 
 ## Contact
 - Melody Monyok
   - <monyokwebdev@gmail.com>
-  - (612) 492-1528
+  - <(612) 492-1528>
