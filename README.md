@@ -1,7 +1,7 @@
 # 06-HW-weatherDashboard
 - Check the local weather of any city!
 
-[Link to live site.](https://mmonyok.github.io/06-HW-weatherDashboard/)
+[Live site!](https://mmonyok.github.io/06-HW-weatherDashboard/)
 
 ## Description
 - Understanding server-side APIs is an important part of my coding journey. Working with them on this project will go a long way in assisting me in developing my coding skills and knowledge. 
@@ -25,7 +25,7 @@
 
 3. You have Git and Github Desktop installed (https://git-scm.com/downloads, https://desktop.github.com/) and have registered for an account,
 
-4. Clone this repository: git clone https://github.com/bpplaysguitar/weather-dashboard.git,
+4. Either Clone or Fork this repository: https://github.com/mmonyok/06-HW-weatherDashboard,
 
 5. Create your own repository for the files on GitHub.
 
